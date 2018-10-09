@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Youtube api practice</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+
+</head>
+<style>
+  #auth-button, #content ,#signout-button {
+    display: none;
+  }
+</style>
+
+<body>
+  <nav class="black">
+    <div class="nav-wrapper">
+      <div class="container">
+        <a href="#!" class="brand-logo">Youtube api practice</a>
+
+      </div>
+
+    </div>
+
+  </nav>
+  </br>
+  <section>
+    <div class="container">
+      <p>Login with google</p>
+      <button id="auth-button" class="btn red">Login</button>
+      <button id="signout-button" class="btn red">Logout</button>
+      </br>
+      <div id="content">
+        <div class="row">
+          <div class="col s6">
+            <form id="channel-form ">
+              <div class="input-field col s6">
+                <input type="text" placeholder="Enter channel name" id="channel-input">
+                <input class="btn grey " value="submit" type="submit">
+              </div>
+
+
+            </form>
+          </div>
+          <div id="channel-data" class="col s6">
+
+          </div>
+        </div>
+        <div class="row" id="video-container">
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script async defer src="https://apis.google.com/js/api.js" onload="this.onload=function(){};handleClientLoad()"
+    onreadystatechange="if (this.readyState === 'complete') this.onload()">
+    </script>
+  <script src="app.js"></script>
+</body>
+
+</html>
