@@ -71,8 +71,8 @@ function handleSignoutClick() {
 
 function getChannel(Channel) {
   gapi.client.youtube.channels.list({
-    part: 'snippet,contentDetails,statistics',
-    forUsername: Channel
+    'part': 'snippet,contentDetails,statistics',
+    'forUsername': Channel
   }).then((response) => {
     console.log(response);
     const channel = response.result.items[0];
@@ -92,9 +92,9 @@ function getChannel(Channel) {
     const playListId = channel.contentDetails.relatedPlaylist.uploads;
     Videos(playListId)
 
-
   })
     .catch((err) => {
+      console.log(err)
       alert('No channel by that name')
     });
 }
