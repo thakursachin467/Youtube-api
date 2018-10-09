@@ -10,7 +10,7 @@ const signoutButton = document.getElementById('signout-button');
 const content = document.getElementById('content');
 const channelForm = document.getElementById('channel-form');
 const channelInput = document.getElementById('channel-input');
-const Videos = document.getElementById('video-container');
+const VideosContainer = document.getElementById('video-container');
 const channelData = document.getElementById('channel-data');
 const defaultChannel = 'Apollo GraphQL'
 
@@ -47,13 +47,13 @@ function updateSigninStatus(isSignedIn) {
     authorizeButton.style.display = 'none';
     signoutButton.style.display = 'block';
     content.style.display = 'block';
-    Videos.style.display = 'block';
+    VideosContainer.style.display = 'block';
     getChannel(defaultChannel);
   } else {
     authorizeButton.style.display = 'block';
     signoutButton.style.display = 'none';
     content.style.display = 'none';
-    Videos.style.display = 'none';
+    VideosContainer.style.display = 'none';
   }
 
 }
@@ -122,9 +122,9 @@ function Videos(playListId) {
         
         `
       });
-      Videos.innerHTML = data;
+      VideosContainer.innerHTML = data;
     } else {
-      Videos.innerHTML = 'No uploaded videos'
+      VideosContainer.innerHTML = 'No uploaded videos'
     }
   });
 }
