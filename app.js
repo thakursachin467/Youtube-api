@@ -17,6 +17,7 @@ const defaultChannel = 'Apollo GraphQL'
 channelForm.addEventListener('submit', (e) => {
   e.preventDefault();
   const channel = channelInput.value;
+  console.log(channel);
   getChannel(channel);
 })
 
@@ -69,10 +70,10 @@ function handleSignoutClick() {
 
 }
 
-function getChannel(Channel) {
+function getChannel(ChannelNameReceived) {
   gapi.client.youtube.channels.list({
     'part': 'snippet,contentDetails,statistics',
-    'forUsername': Channel
+    'forUsername': `${ChannelNameReceived}`
   }).then((response) => {
     console.log(response);
     const channel = response.result.items[0];
